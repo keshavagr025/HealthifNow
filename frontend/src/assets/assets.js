@@ -36,10 +36,15 @@ import General_physician from './General_physician.svg'
 import Gynecologist from './Gynecologist.svg'
 import Neurologist from './Neurologist.svg'
 import Pediatricians from './Pediatricians.svg'
+<<<<<<< HEAD
 import group from './group.jpg'
 import lady from './lady.jpg'
 
 
+=======
+import headers_img from './headers_img.png'
+import keshav from './keshav.webp'
+>>>>>>> d6c71fa1cb0a10080122867e8ae6cd395bc5db81
 
 export const assets = {
     appointment_img,
@@ -59,8 +64,13 @@ export const assets = {
     upload_icon,
     stripe_logo,
     razorpay_logo,
+<<<<<<< HEAD
     group,
     lady
+=======
+    headers_img,
+    keshav
+>>>>>>> d6c71fa1cb0a10080122867e8ae6cd395bc5db81
 }
 
 export const specialityData = [
