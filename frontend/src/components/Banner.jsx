@@ -16,7 +16,7 @@ const Banner = () => {
                     <p className='mt-4'>With 100+ Trusted Doctors</p>
                 </div>
                 <button onClick={() => { navigate('/login'); scrollTo(0, 0) }} className='bg-white text-sm sm:text-base text-[#595959] px-8 py-3 rounded-full mt-6 hover:scale-105 transition-all '>Create account</button>
-            </div>
+            </div>  
 
             {/* ------- Right Side ------- */}
             <div className='hidden md:block md:w-1/2 lg:w-[370px] relative'>
