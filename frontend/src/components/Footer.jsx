@@ -51,7 +51,7 @@ const Footer = () => {
           </a>
         </div>
         <hr />
-        <p className='py-5 text-sm'>© 2024 Prescripto.com - All Rights Reserved.</p>
+        <p className='py-5 text-sm'>© 2025 wellora.com - All Rights Reserved.</p>
       </div>
 
     </div>
