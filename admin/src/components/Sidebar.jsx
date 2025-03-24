@@ -3,6 +3,7 @@ import { assets } from '../assets/assets'
 import { NavLink } from 'react-router-dom'
 import { DoctorContext } from '../context/DoctorContext'
 import { AdminContext } from '../context/AdminContext'
+import Chatbot from '../pages/Admin/Chatbot'
 
 const Sidebar = () => {
 
@@ -29,6 +30,10 @@ const Sidebar = () => {
           <img className='min-w-5' src={assets.people_icon} alt='' />
           <p className='hidden md:block'>Doctors List</p>
         </NavLink>
+         {/* Add Chatbot Next to Doctors List */}
+         <div className="p-3">
+            <Chatbot />
+          </div>
       </ul>}
 
       {dToken && <ul className='text-[#515151] mt-5'>
