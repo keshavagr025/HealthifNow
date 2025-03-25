@@ -30,7 +30,7 @@ const Navbar = () => {
         </NavLink>
 
         <NavLink to='/doctors' >
-          <li className='py-1'>BLOCKS</li>
+          <li className='py-1'>BLOG</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>
 
