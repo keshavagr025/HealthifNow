@@ -11,11 +11,8 @@
   },
   "dependencies": {
     "axios": "^1.7.2",
-<<<<<<< HEAD
-    "icons": "^1.0.0",
-=======
     "framer-motion": "^12.5.0",
->>>>>>> 5456b4dd8629925278ad510ae052b5b389484f7e
+    "icons": "^1.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.5.0",

@@ -51,11 +51,11 @@ const Footer = () => {
           </a>
         </div>
         <hr />
-<<<<<<< HEAD
+
         <p className='py-5 text-sm'>© 2025 wellora.com - All Rights Reserved.</p>
-=======
+
         <p className='py-5 text-sm'>© 2025 HealthifNow.com - All Rights Reserved.</p>
->>>>>>> 5456b4dd8629925278ad510ae052b5b389484f7e
+
       </div>
 
     </div>
