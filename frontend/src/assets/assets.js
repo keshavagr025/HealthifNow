@@ -38,6 +38,10 @@ import Neurologist from './Neurologist.svg'
 import Pediatricians from './Pediatricians.svg'
 import group from './group.jpg'
 import lady from './lady.jpg'
+import ap from './ap.png'
+import g1 from './g1.png'
+import g2 from './g2.jpeg'
+
 
 export const assets = {
     appointment_img,
@@ -58,7 +62,10 @@ export const assets = {
     stripe_logo,
     razorpay_logo,
     group,
-    lady
+    lady,
+    ap,
+    g1,
+    g2
 }
 
 export const specialityData = [

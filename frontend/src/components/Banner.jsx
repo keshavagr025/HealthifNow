@@ -20,7 +20,7 @@ const Banner = () => {
 
             {/* ------- Right Side ------- */}
             <div className='hidden md:block md:w-1/2 lg:w-[370px] relative'>
-                <img className='w-full absolute bottom-1 right-0 max-w-md' src={assets.lady} alt="" />
+                <img className='w-full absolute bottom-1 right-0   max-w-7xl max-h-88' src={assets.ap} alt="" />
             </div>
         </div>
     )
