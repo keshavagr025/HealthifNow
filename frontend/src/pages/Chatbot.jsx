@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaRobot } from "react-icons/fa";
-import { motion, useAnimation } from "framer-motion"; // Import Framer Motion
+import { motion, useAnimation } from "framer-motion";
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -8,7 +8,9 @@ const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const controls = useAnimation();
 
-  // Auto Motion Effect for Robot Icon
+  // ⚠️ Yahan apni Gemini API key daalo
+  const GEMINI_API_KEY = "AIzaSyCJ4gv5A8zzuklMG7PqbvUFKbL7V6oJUAs";  
+
   useEffect(() => {
     const animateIcon = async () => {
       while (true) {
@@ -18,7 +20,6 @@ const Chatbot = () => {
     animateIcon();
   }, [controls]);
 
-  // Send message to backend
   const sendMessage = async () => {
     if (!input.trim()) return;
 
@@ -27,23 +28,40 @@ const Chatbot = () => {
     setInput("");
 
     try {
-      const response = await fetch("http://localhost:5173/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: input }),
-      });
+      console.log("Sending request to Gemini API...");
+
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateText?key=${GEMINI_API_KEY}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            prompt: { text: input },
+          }),
+        }
+      );
+
+      console.log("Response received:", response);
+
+      if (!response.ok) {
+        throw new Error(`API Error: ${response.status} ${response.statusText}`);
+      }
 
       const data = await response.json();
-      const botMessage = { text: data.reply, sender: "bot" };
-      setMessages((prev) => [...prev, botMessage]);
+      console.log("Data received:", data);
+
+      const botReply = data?.candidates?.[0]?.output || "Sorry, I couldn't understand.";
+      
+      setMessages((prev) => [...prev, { text: botReply, sender: "bot" }]);
+
     } catch (error) {
       console.error("Chatbot error:", error);
+      alert("Error connecting to Gemini API. Check console for details.");
     }
   };
 
   return (
     <div className="fixed bottom-5 right-5 flex flex-col items-end">
-      {/* Auto Moving Chatbot Icon */}
       <motion.div animate={controls}>
         <FaRobot
           size={40}
@@ -52,7 +70,6 @@ const Chatbot = () => {
         />
       </motion.div>
 
-      {/* Chatbox UI */}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -67,23 +84,14 @@ const Chatbot = () => {
                 initial={{ opacity: 0, x: msg.sender === "user" ? 50 : -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3 }}
-                className={`p-2 my-1 ${
-                  msg.sender === "user" ? "text-right" : "text-left"
-                }`}
+                className={`p-2 my-1 ${msg.sender === "user" ? "text-right" : "text-left"}`}
               >
-                <span
-                  className={`px-3 py-1 rounded-lg ${
-                    msg.sender === "user"
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200"
-                  }`}
-                >
+                <span className={`px-3 py-1 rounded-lg ${msg.sender === "user" ? "bg-blue-500 text-white" : "bg-gray-200"}`}>
                   {msg.text}
                 </span>
               </motion.div>
             ))}
           </div>
-          {/* Input Field */}
           <div className="flex mt-2">
             <input
               className="flex-1 border p-2 rounded-l"
