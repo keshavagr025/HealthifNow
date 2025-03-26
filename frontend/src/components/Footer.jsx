@@ -54,11 +54,6 @@ const Footer = () => {
 
         <p className='py-5 text-sm'>© 2025 wellora.com - All Rights Reserved.</p>
 
-<<<<<<< HEAD
-        
-
-=======
->>>>>>> f64ea73 (add video calling)
       </div>
     </div>
   );
