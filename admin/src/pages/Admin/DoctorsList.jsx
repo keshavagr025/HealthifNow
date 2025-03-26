@@ -6,16 +6,11 @@ const DoctorsList = () => {
   const { doctors, changeAvailability , aToken , getAllDoctors} = useContext(AdminContext)
 
   useEffect(() => {
-    console.log("aToken:", aToken); // Debugging aToken
+    // console.log("aToken:", aToken); // Debugging aToken
     if (aToken) {
       getAllDoctors();
     }
-  }, [aToken]);
-
-  useEffect(() => {
-    console.log("Doctors List:", doctors); // Debugging doctors array
-  }, [doctors]);
-  
+  }, [aToken])
   
   return (
     <div className='m-5 max-h-[90vh] overflow-y-scroll'>

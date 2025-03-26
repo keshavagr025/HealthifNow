@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Verify from './pages/Verify'
 import Chatbot from "./pages/Chatbot";
 
+
 const App = () => {
   return (
     <div className='mx-4 sm:mx-[10%]'>
