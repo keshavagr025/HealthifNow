@@ -2,10 +2,8 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGODB_URI, { 
-            dbName: "test",  // Ensure correct DB name
-            useNewUrlParser: true, 
-            useUnifiedTopology: true 
+        await mongoose.connect(process.env.MONGODB_URI, {
+            dbName: process.env.DB_NAME || "test" // Ensure correct DB name from env
         });
 
         console.log("✅ MongoDB Connected Successfully!");
