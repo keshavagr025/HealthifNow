@@ -29,7 +29,7 @@ const Footer = () => {
           <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
           <ul className='flex flex-col gap-2 text-gray-600'>
             <li>+1-98-658-6526</li>
-            <li> HealthifNow@gmail.com</li>
+            <li>wellora@gmail.com</li>
           </ul>
         </div>
       </div>
@@ -54,10 +54,12 @@ const Footer = () => {
 
         <p className='py-5 text-sm'>© 2025 wellora.com - All Rights Reserved.</p>
 
+<<<<<<< HEAD
         
 
+=======
+>>>>>>> f64ea73 (add video calling)
       </div>
-
     </div>
   );
 }

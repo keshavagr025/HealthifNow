@@ -20,8 +20,13 @@ const Header = () => {
             </div>
 
             {/* --------- Header Right --------- */}
+<<<<<<< HEAD
             <div className='md:w-1/2 relative max-w-8xl'>
                 <img className='w-full md:absolute bottom-1 h-auto rounded-lg' src={assets.g1} alt="" />
+=======
+            <div className='md:w-1/2 relative'>
+                <img className='w-full md:absolute bottom-1 h-auto rounded-lg' src={assets} alt="" />
+>>>>>>> f64ea73 (add video calling)
             </div>
         </div>
     )
